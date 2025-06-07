@@ -1,10 +1,71 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Test Page</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <p>This is a working GitHub Pages site.</p>
-  </body>
+<html lang="en" class="home-page">
+<head>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Complete list of tutorials</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- You can swap in your own icon fonts if you like -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <button class="menu-btn material-icons">menu</button>
+    <span class="site-title">AI2Tox</span>
+
+    <div class="search-wrapper">
+      <input type="search" placeholder="Search…" aria-label="Search">
+      <span class="material-icons search-icon">search</span>
+    </div>
+    
+    <a 
+      class="github-link" 
+      href="https://github.com/mhhg1030/ai2tox_tutorials" 
+      target="_blank" 
+      rel="noopener noreferrer">
+
+      <img
+        src="images/github_logo.png"
+        alt="GitHub"
+        class="github-icon"
+      >
+    </a>
+  </header>
+
+  <main class="content">
+    <h1>Complete list of tutorials</h1>
+    <p>
+      This is the complete list of our tutorials.
+      <!-- <a href="#">tutorials by collections</a>. -->
+    </p>
+    <ul class="tutorial-list">
+      <li>
+        <a href="tutorials/t001.html">T001 · QSAR Tutorial</a>
+          <ul class="subchapters">
+            <li><a href="tutorials/t001.html#chapter1">Chapter 1</a></li>
+            <li><a href="tutorials/t001.html#chapter2">Chapter 2</a></li>
+            <li><a href="tutorials/t001.html#chapter3">Chapter 3</a></li>
+            <li><a href="tutorials/t001.html#chapter4">Chapter 4</a></li>
+            <li><a href="tutorials/t001.html#chapter5">Chapter 5</a></li>
+          </ul>
+      </li>
+      <li><a href="#">T002 · Tutorial 2</a></li>
+      <li><a href="#">T003 · Tutorial 3</a></li>
+      <li><a href="#">T004 · Tutorial 4</a></li>
+      <li><a href="#">T005 · Tutorial 5</a></li>
+      <li><a href="#">T006 · Tutorial 6</a></li>
+      <li><a href="#">T007 · Tutorial 7</a></li>
+    </ul>
+  </main>
+</body>
 </html>
+
+<script>
+  document.querySelector('.menu-btn').onclick = () => {
+    document.querySelector('.sidebar').classList.toggle('collapsed');
+  };
+</script>
