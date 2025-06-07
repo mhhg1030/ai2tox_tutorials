@@ -7,11 +7,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-body {
+a {
+  color: #005185;
+  text-decoration: none;    /* optional: remove underlines */
+}
 
-  font-family: 'Montserrat', sans-serif;
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.site-title {
+  color: #fff;           /* white text, for example */
+  text-decoration: none; /* no underline */
+  font-weight: 500;
+  font-size: 1.25rem;
+  flex: 1;
+}
+
+
+body {
   line-height: 1.6;
   color: #333;
   background: #fafafa;
@@ -19,13 +37,28 @@ body {
 
 /* Header */
 .site-header {
-  display: flex;
-  align-items: center;
   background-color: #0A1C2B;
   color: #fff;
+  display: flex;
+  align-items: center;
   padding: 0.5rem 1rem;
+  position: fixed;   /* ← fix it */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  z-index: 1;
 }
 
+.layout {
+  display: flex;
+  height: calc(100vh - 56px);  /* full viewport minus header height */
+  margin-top: 56px;            /* drop below the header */
+  overflow: hidden;
+}
+/* html {
+  scroll-padding-top: 56px;
+} */
 .menu-btn {
   background: none;
   border: none;
@@ -35,11 +68,6 @@ body {
   margin-right: 1rem;
 }
 
-.site-title {
-  font-size: 1.25rem;
-  font-weight: 500;
-  flex: 1;
-}
 
 .search-wrapper {
   position: relative;
@@ -66,17 +94,54 @@ body {
   font-size: 1.5rem;
 }
 
+/* 4) Sidebar */
+.sidebar {
+  flex: 0 0 220px;       /* fixed width */
+  background: #f9f9f9;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  overflow-y: auto;      /* scroll inside */
+}
+.sidebar.collapsed {
+  flex: 0 0 0;
+  padding: 0;
+  overflow: hidden;
+}
+.sidebar-title {
+  font-size: 1.1rem; margin-bottom: 1rem;
+}
+.sidebar-list {
+  list-style: none;
+}
+.sidebar-list li + li {
+  margin-top: 0.75rem;
+}
+.sidebar-list a {
+  text-decoration: none; color: #005185;
+}
+.sidebar-list a:hover {
+  text-decoration: underline;
+}
+
 /* Main content */
 .content {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  padding-top: 40px;
+  /* padding-right:0px; */
+  overflow-y: auto;
+  margin: 0.5rem 0 0 2rem;
+  flex: 1 1 auto;                  /* grow AND shrink */
+  min-width: 0;  
 }
 
 .content h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
+
+/* html, body {
+  height: 100%;
+  overflow-y: auto;
+} */
 
 .content p {
   margin-bottom: 1.5rem;
@@ -85,24 +150,11 @@ body {
 /* List styling */
 .tutorial-list {
   list-style: none;
+
 }
 
 .tutorial-list li + li {
   margin-top: 0.5rem;
-}
-
-.tutorial-list a {
-  color: #005185;
-  text-decoration: none;
-}
-
-.tutorial-list a:hover {
-  text-decoration: underline;
-}
-
-.sidebar.collapsed { 
-  flex: 0 0 0; 
-  overflow: hidden;
 }
 
 .github-icon {
@@ -113,26 +165,6 @@ body {
   cursor: pointer;   
 }
 
-/* Example for a fully fixed header */
-.site-header {
-  background: #0A1C2B;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
-  position: fixed;   /* ← fix it */
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 56px;
-  z-index: 1000;
-}
-
-.content {
-  padding-top: 60px; /* ← push content down */
-  overflow-y: auto;
-}
-
 .tutorial-list .subchapters {
   list-style: none;
   margin: 0.5rem 0 0 1.5rem;
@@ -140,16 +172,35 @@ body {
   font-size: 0.9rem;
 }
 .tutorial-list .subchapters li + li {
-  padding-top: 60px;
+  padding-top: 0px;
 }
 .tutorial-list .subchapters a {
   color: #005185;
 }
 
+
 /* On narrower screens, increase left/right padding */
-@media (max-width: 600px) {
+@media (max-width: 850px) {
   .content {
-    padding: 2rem 2rem;    /* now 2rem all around */
+    padding: 2rem 2rem;
+    flex: 1 1 100%;    /* now 2rem all around */
+  }
+  .chapter {
+    margin-top: 2rem;        /* space before each chapter */
+    margin-bottom: 3rem;
+    padding-right: 20px     /* space after each chapter */
+  }
+  .sidebar {
+    display: none;
   }
 }
 
+.chapter {
+  margin-top: 2rem;        /* space before each chapter */
+  margin-bottom: 3rem;
+  padding-right: 40px     /* space after each chapter */
+}
+.chapter-nav {
+  padding-left: 40px;
+  padding-bottom: 20px; 
+}

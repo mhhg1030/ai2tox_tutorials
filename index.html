@@ -7,15 +7,16 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Complete list of tutorials</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Home • AI2Tox Tutorials</title>
+  <link rel="stylesheet" href="styles.css?ts=${Date.now()}">
   <!-- You can swap in your own icon fonts if you like -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+
   <header class="site-header">
     <button class="menu-btn material-icons">menu</button>
-    <span class="site-title">AI2Tox</span>
+    <a href="index.html" class="site-title">AI2Tox</a>
 
     <div class="search-wrapper">
       <input type="search" placeholder="Search…" aria-label="Search">
@@ -36,31 +37,43 @@
     </a>
   </header>
 
-  <main class="content">
-    <h1>Complete list of tutorials</h1>
-    <p>
-      This is the complete list of our tutorials.
-      <!-- <a href="#">tutorials by collections</a>. -->
-    </p>
-    <ul class="tutorial-list">
-      <li>
-        <a href="tutorials/t001.html">T001 · QSAR Tutorial</a>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2 class="sidebar-title">Tutorials</h2>
+      <nav>
+        <ul class="sidebar-list">
+          <li><a href="tutorials/t001_qsar/t001.html">T001 · QSAR Tutorial</a></li>
+          <!-- <li><a href="#">T002 · Tutorial 2</a></li>
+          <li><a href="#">T003 · Tutorial 3</a></li> -->
+          <!-- …etc… -->
+        </ul>
+      </nav>
+    </aside>
+
+
+    <main class="content">
+      <h1>Complete list of tutorials</h1>
+      <p>This is the complete list of our tutorials.</p>
+      <ul class="tutorial-list">
+        <li>
+          <a href="tutorials/t001_qsar/t001.html">T001 · QSAR Tutorial</a>
           <ul class="subchapters">
-            <li><a href="tutorials/t001.html#chapter1">Chapter 1</a></li>
-            <li><a href="tutorials/t001.html#chapter2">Chapter 2</a></li>
-            <li><a href="tutorials/t001.html#chapter3">Chapter 3</a></li>
-            <li><a href="tutorials/t001.html#chapter4">Chapter 4</a></li>
-            <li><a href="tutorials/t001.html#chapter5">Chapter 5</a></li>
+            <li><a href="tutorials/t001_qsar/t001.html#chapter1">Chapter 1: Introduction</a></li>
+            <li><a href="tutorials/t001_qsar/t001.html#chapter2">Chapter 2: Data Preparation</a></li>
+            <li><a href="tutorials/t001_qsar/t001.html#chapter3">Chapter 3: Descriptors and Molecular Fingerprints</a></li>
+            <li><a href="tutorials/t001_qsar/t001.html#chapter4">Chapter 4: Model Building</a></li>
+            <li><a href="tutorials/t001_qsar/t001.html#chapter5">Chapter 5: Model Validation and Testing</a></li>
           </ul>
-      </li>
-      <li><a href="#">T002 · Tutorial 2</a></li>
-      <li><a href="#">T003 · Tutorial 3</a></li>
-      <li><a href="#">T004 · Tutorial 4</a></li>
-      <li><a href="#">T005 · Tutorial 5</a></li>
-      <li><a href="#">T006 · Tutorial 6</a></li>
-      <li><a href="#">T007 · Tutorial 7</a></li>
-    </ul>
-  </main>
+        </li>
+        <!-- <li><a href="#">T002 · Tutorial 2</a></li>
+        <li><a href="#">T003 · Tutorial 3</a></li>
+        <li><a href="#">T004 · Tutorial 4</a></li>
+        <li><a href="#">T005 · Tutorial 5</a></li>
+        <li><a href="#">T006 · Tutorial 6</a></li>
+        <li><a href="#">T007 · Tutorial 7</a></li> -->
+      </ul>
+    </main>
+  </div>
 </body>
 </html>
 
