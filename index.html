@@ -1,84 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" class="home-page">
 <head>
-  <style>
-    html { scroll-behavior: smooth; }
-  </style>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home • AI2Tox Tutorials</title>
-  <link rel="stylesheet" href="styles.css?ts=${Date.now()}">
-  <!-- You can swap in your own icon fonts if you like -->
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Material Icons for the menu & search icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
+  <!-- Fixed top header -->
   <header class="site-header">
     <button class="menu-btn material-icons">menu</button>
     <a href="index.html" class="site-title">AI2Tox</a>
-
     <div class="search-wrapper">
       <input type="search" placeholder="Search…" aria-label="Search">
       <span class="material-icons search-icon">search</span>
     </div>
-    
-    <a 
-      class="github-link" 
-      href="https://github.com/mhhg1030/ai2tox_tutorials" 
-      target="_blank" 
-      rel="noopener noreferrer">
-
-      <img
-        src="images/github_logo.png"
-        alt="GitHub"
-        class="github-icon"
-      >
+    <a class="github-link"
+       href="https://github.com/mhhg1030/ai2tox_tutorials"
+       target="_blank"
+       rel="noopener noreferrer">
+      <img src="images/github_logo.png" alt="GitHub" class="github-icon">
     </a>
   </header>
 
+  <!-- Two-column layout below header -->
   <div class="layout">
+    <!-- Sidebar -->
     <aside class="sidebar">
       <h2 class="sidebar-title">Tutorials</h2>
       <nav>
         <ul class="sidebar-list">
-          <li><a href="tutorials/t001_qsar/t001.html">T001 · QSAR Tutorial</a></li>
-          <!-- <li><a href="#">T002 · Tutorial 2</a></li>
-          <li><a href="#">T003 · Tutorial 3</a></li> -->
-          <!-- …etc… -->
+          <li><a href="tutorials/t001_qsar/t001.html">T001 · QSAR 01: Introduction</a></li>
+          <li><a href="tutorials/t002_qsar/t002.html">T002 · QSAR 02: Data Preparation</a></li>
+          <li><a href="tutorials/t003_qsar/t003.html">T003 · QSAR 03: Descriptors &amp; Fingerprints</a></li>
+          <li><a href="tutorials/t004_qsar/t004.html">T004 · QSAR 04: Model Building</a></li>
+          <li><a href="tutorials/t005_qsar/t005.html">T005 · QSAR 05: Validation &amp; Testing</a></li>
         </ul>
       </nav>
     </aside>
 
-
+    <!-- Main content -->
     <main class="content">
       <h1>Complete list of tutorials</h1>
       <p>This is the complete list of our tutorials.</p>
       <ul class="tutorial-list">
-        <li>
-          <a href="tutorials/t001_qsar/t001.html">T001 · QSAR Tutorial</a>
-          <ul class="subchapters">
-            <li><a href="tutorials/t001_qsar/t001.html#chapter1">Chapter 1: Introduction</a></li>
-            <li><a href="tutorials/t001_qsar/t001.html#chapter2">Chapter 2: Data Preparation</a></li>
-            <li><a href="tutorials/t001_qsar/t001.html#chapter3">Chapter 3: Descriptors and Molecular Fingerprints</a></li>
-            <li><a href="tutorials/t001_qsar/t001.html#chapter4">Chapter 4: Model Building</a></li>
-            <li><a href="tutorials/t001_qsar/t001.html#chapter5">Chapter 5: Model Validation and Testing</a></li>
-          </ul>
-        </li>
-        <!-- <li><a href="#">T002 · Tutorial 2</a></li>
-        <li><a href="#">T003 · Tutorial 3</a></li>
-        <li><a href="#">T004 · Tutorial 4</a></li>
-        <li><a href="#">T005 · Tutorial 5</a></li>
-        <li><a href="#">T006 · Tutorial 6</a></li>
-        <li><a href="#">T007 · Tutorial 7</a></li> -->
+        <li><a href="tutorials/t001_qsar/t001.html">T001 · QSAR 01: Introduction</a></li>
+        <li><a href="tutorials/t002_qsar/t002.html">T002 · QSAR 02: Data Preparation</a></li>
+        <li><a href="tutorials/t003_qsar/t003.html">T003 · QSAR 03: Descriptors &amp; Fingerprints</a></li>
+        <li><a href="tutorials/t004_qsar/t004.html">T004 · QSAR 04: Model Building</a></li>
+        <li><a href="tutorials/t005_qsar/t005.html">T005 · QSAR 05: Validation &amp; Testing</a></li>
       </ul>
     </main>
   </div>
+
+  <!-- Sidebar toggle script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn     = document.querySelector('.menu-btn');
+      const sidebar = document.querySelector('.sidebar');
+      if (btn && sidebar) {
+        btn.addEventListener('click', () => {
+          sidebar.classList.toggle('collapsed');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
-
-<script>
-  document.querySelector('.menu-btn').onclick = () => {
-    document.querySelector('.sidebar').classList.toggle('collapsed');
-  };
-</script>

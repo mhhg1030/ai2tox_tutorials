@@ -56,9 +56,7 @@ body {
   margin-top: 56px;            /* drop below the header */
   overflow: hidden;
 }
-/* html {
-  scroll-padding-top: 56px;
-} */
+
 .menu-btn {
   background: none;
   border: none;
@@ -123,6 +121,7 @@ body {
   text-decoration: underline;
 }
 
+
 /* Main content */
 .content {
   padding-top: 40px;
@@ -137,11 +136,6 @@ body {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
-
-/* html, body {
-  height: 100%;
-  overflow-y: auto;
-} */
 
 .content p {
   margin-bottom: 1.5rem;
@@ -180,9 +174,9 @@ body {
 
 
 /* On narrower screens, increase left/right padding */
-@media (max-width: 850px) {
+@media (max-width: 800px) {
   .content {
-    padding: 2rem 2rem;
+    padding: 0rem 0rem;
     flex: 1 1 100%;    /* now 2rem all around */
   }
   .chapter {
@@ -191,7 +185,12 @@ body {
     padding-right: 20px     /* space after each chapter */
   }
   .sidebar {
-    display: none;
+    padding: 2rem 2rem;
+    flex: 1 1 100%; 
+    z-index: 1001;   /* above main but below header */
+  }
+  .sidebar.collapsed {
+    transform: translateX(0);
   }
 }
 
@@ -199,8 +198,4 @@ body {
   margin-top: 2rem;        /* space before each chapter */
   margin-bottom: 3rem;
   padding-right: 40px     /* space after each chapter */
-}
-.chapter-nav {
-  padding-left: 40px;
-  padding-bottom: 20px; 
 }
