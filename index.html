@@ -1,22 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" class="home-page">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home • AI2Tox Tutorials</title>
-
-  <!-- Your main stylesheet -->
+  <title>Home | AI2TOX Tutorials</title>
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Material Icons for the menu & search icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Fixed top header -->
   <header class="site-header">
-    <button class="menu-btn material-icons">menu</button>
-    <a href="index.html" class="site-title">AI2Tox</a>
+    <button class="menu-btn material-icons" aria-label="Toggle sidebar">menu</button>
+    <a href="index.html" class="site-title">AI2TOX</a>
     <div class="search-wrapper">
       <input type="search" placeholder="Search…" aria-label="Search">
       <span class="material-icons search-icon">search</span>
@@ -24,14 +19,13 @@
     <a class="github-link"
        href="https://github.com/choulab210/ai2tox_tutorials"
        target="_blank"
-       rel="noopener noreferrer">
+       rel="noopener noreferrer"
+       aria-label="GitHub repository">
       <img src="images/github_logo.png" alt="GitHub" class="github-icon">
     </a>
   </header>
 
-  <!-- Two-column layout below header -->
   <div class="layout">
-    <!-- Sidebar -->
     <aside class="sidebar">
       <h2 class="sidebar-title">Tutorials</h2>
       <nav>
@@ -46,10 +40,10 @@
       </nav>
     </aside>
 
-    <!-- Main content -->
     <main class="content">
-      <h1>Complete list of tutorials</h1>
-      <p>This is the complete list of our tutorials.</p>
+      <h2>AI2TOX Tutorials</h2>
+      <h1>Complete List of Tutorials</h1>
+      <p>Step-by-step guides covering QSAR modeling, machine learning, and high-performance computing for environmental health and toxicology research.</p>
       <ul class="tutorial-list">
         <li><a href="tutorials/t001_qsar/t001.html">T001 · QSAR 01: Introduction</a></li>
         <li><a href="tutorials/t002_qsar/t002.html">T002 · QSAR 02: Data Preparation</a></li>
@@ -61,7 +55,6 @@
     </main>
   </div>
 
-  <!-- Sidebar toggle script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const btn     = document.querySelector('.menu-btn');
